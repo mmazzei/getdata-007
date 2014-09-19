@@ -16,7 +16,7 @@ As a final step, generates a file named "tidy_data.txt" containing the data from
 
 # Code book
 The variables in the tidy_data.txt file are:
- * subject_id   : the identifier of the subject
- * activity_desc: the activity that subject were doing when measured
- * measure      : the measurement of a mean or std of a signal
- * mean(value)  : the mean of all the values obtained for the measure
+ * subject_id   : the identifier of the subject (number between 1 and 30)
+ * activity_desc: the activity that subject were doing when measured (one of the activity labels mentioned in the "activity_labels.txt" file, in the data set)
+ * measure      : the measurement of a mean or std of a signal (name of the signal indicating the axis, if is a mean or a std)
+ * mean(value)  : the mean of all the values obtained for the measure (normalized between -1 and 1)
