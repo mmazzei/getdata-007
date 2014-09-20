@@ -18,6 +18,6 @@ This file is tidy data because contains one variable per column and one observat
 
 # Code book
 The variables in the tidy_data.txt file are:
- * subject_id   : the identifier of the subject (number between 1 and 30)
- * activity_desc: the activity that subject were doing when measured (one of the activity labels mentioned in the "activity_labels.txt" file, in the data set)
- * measures     : there are 66 columns, one for each measure of mean or std of a measurement (the measure list is located in "features_info.txt" file, in the data set). The value in each column is the mean of all the values for the given measure, for the subject in the activity.
+ * *subject_id*   : (integer) the identifier of the subject (number between 1 and 30)
+ * *activity_desc*: (character) the activity that subject were doing when measured (one of the activity labels mentioned in the "activity_labels.txt" file, in the data set)
+ * *measures*     : (numeric) there are 66 columns, one for each measure of mean or std of a measurement (the measurements list is located in "features_info.txt" file, in the data set). The value in each column is the mean of all the values for the given measure, for the subject in the activity.
