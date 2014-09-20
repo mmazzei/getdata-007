@@ -70,12 +70,11 @@ rm(test.df)
 ####################
 
 ####################
-# Append activity data
+# Add the activity description to the data
 appendActivity <- function(df = tbl_df(data.frame())) {
   activity.labels <- read.table(file="UCI HAR Dataset/activity_labels.txt", header=F)
   names(activity.labels)[1] <- "activity_id"
   names(activity.labels)[2] <- "activity_desc"
-  # activity.labels$activity_id <- as.character(activity.labels$activity_id)
 
   inner_join(x=df, y=activity.labels, by = "activity_id")
 }
@@ -84,7 +83,7 @@ full.df  <- appendActivity(df=full.df)
 ####################
 
 ####################
-# Rename the columns from the X files with a more descriptive name
+# Rename the columns from the X_test.txt and X_train.txt files with a more descriptive name
 
 
 # Load the descriptive information
