@@ -16,8 +16,7 @@ As a final step, generates a file named `tidy_data.txt` containing the data from
 
 This file is tidy data because contains one variable per column and one observation in each row.
 
-# Code book
-The variables in the `tidy_data.txt` file are:
- * `subject_id`   : (_integer_) the identifier of the subject (number between 1 and 30)
- * `activity_desc`: (_character_) the activity that subject were doing when measured (one of the activity labels mentioned in the `activity_labels.txt` file, in the data set)
- * `measures`     : (_numeric_) there are 66 columns, one for each measure of mean or std of a measurement (the measurements list is located in `features_info.txt` file, in the data set). The value in each column is the mean of all the values for the given measure, for the subject in the activity.
+The files provided in this repository are:
+ * `run_analysis.R`: is the script that produces the `tidy_data.txt`
+ * `tidy_data.txt` : is a file containing the output from the step (5) mentioned before.
+ * `CodeBook.md`   : contains the codebook for the `tidy_data.txt` file.
