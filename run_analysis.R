@@ -105,8 +105,8 @@ library(stringr)
 #  - the columns containing "mean(" or "std("
 #  - the activity_id
 #  - the activity_desc
-full.df <- full.df
-  %>% select(subject_id=V1, activity_id, activity_desc, matches("(mean\\(|std\\()"))
+full.df <- full.df %>%
+  select(subject_id=V1, activity_id, activity_desc, matches("(mean\\(|std\\()"))
 ####################
 
 
@@ -117,16 +117,15 @@ library(tidyr)
 # this df will contain the columns:
 #  - subject_id
 #  - activity_desc
-#  - measure
-#  - value for the measure
+#  - measures (tBodyAcc-mean()-X, tBodyAcc-mean()-Y, tBodyAcc-mean()-Z, etc)
 # Notes:
 #  - dropped activity_id col
-#  - summarised values
+#  - each measure column contains the mean of all the values in that column for the
+#    subject on the activity
 tidy.df <- full.df %>% 
-  gather(measure, value, `tBodyAcc-mean()-X`:`fBodyBodyGyroJerkMag-std()`) %>%
   select(-activity_id) %>%
-  group_by(subject_id, activity_desc, measure) %>%
-  summarise(mean(value))
+  group_by(subject_id, activity_desc) %>%
+  summarise_each(funs(mean))
 ####################
 
 ####################
